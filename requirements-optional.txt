@@ -1,0 +1,2 @@
+# OPTIONAL online assistant (not needed): pip install anthropic
+anthropic>=0.40

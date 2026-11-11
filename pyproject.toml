@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "econlab"
+version = "0.2.0"
+description = "Secondary-data analysis toolkit: cross-section, time-series and panel econometrics, with an offline assistant and a no-install browser Workbench"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = ["pandas", "numpy", "scipy", "statsmodels", "linearmodels", "arch", "scikit-learn", "matplotlib", "openpyxl"]
+
+[project.optional-dependencies]
+app = ["streamlit"]
+llm = ["anthropic"]
+dev = ["pytest", "playwright"]
+
+[project.scripts]
+econlab = "econlab.cli:main"
+
+[tool.setuptools]
+packages = ["econlab"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
